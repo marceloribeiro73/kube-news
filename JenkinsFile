@@ -24,7 +24,7 @@ pipeline{
         stage('Deploy on Kubernets Digital Ocean'){
             steps{
                 withKubeConfig([credentialsId: 'kubeconfigDO']){
-                    sh 'kubectl apply -f ./k8s/deployment.yaml'
+                    sh 'kubectl apply -f ./src/k8s/deployment.yaml'
                 }
             }
         }
