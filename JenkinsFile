@@ -1,0 +1,16 @@
+pipline{
+    agent any
+    
+    stages{
+
+        stage('Build Docker Image'){
+            steps{
+                script {
+                    dockerapp = docker.build("marceloribeiro73/kubenews:${env.BUILD_ID}", '-f ./src/Dockerfile, ./src')
+                }
+            }
+        }
+
+    }
+
+}
